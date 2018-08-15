@@ -169,7 +169,7 @@ frame(Data, Options) ->
 
 -spec apply_options(Frame::#frame{}, Options::list()) -> #frame{}.
 apply_options(Frame, [mask | Tail]) ->
-  <<MaskKey:32>> = crypto:rand_bytes(4),
+  <<MaskKey:32>> = crypto:strong_rand_bytes(4),
   T = Frame#frame{
     mask = 1,
     masking_key = MaskKey,

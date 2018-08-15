@@ -20,4 +20,4 @@
 
 -spec generate() -> string().
 generate() ->
-  binary_to_list(base64:encode(crypto:rand_bytes(16))).
+  binary_to_list(base64:encode(crypto:strong_rand_bytes(16))).
